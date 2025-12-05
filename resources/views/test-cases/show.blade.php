@@ -9,11 +9,11 @@
             </div>
             <div class="flex gap-3">
                 <a href="{{ route('projects.test-cases.edit', [$project, $testCase]) }}" 
-                   class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                   class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
                     Edit
                 </a>
                 <a href="{{ route('projects.test-cases.index', $project) }}" 
-                   class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                   class="bg-gray-500 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded">
                     Back to List
                 </a>
             </div>

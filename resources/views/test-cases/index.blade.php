@@ -5,7 +5,7 @@
                 Test Cases - {{ $project->name }}
             </h2>
             <a href="{{ route('projects.test-cases.create', $project) }}" 
-               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+               class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
                 + Create Test Case
             </a>
         </div>
@@ -46,7 +46,7 @@
                         </div>
                         
                         <div class="flex gap-2">
-                            <button type="submit" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded flex-1">
+                            <button type="submit" class="bg-gray-500 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded flex-1">
                                 Filter
                             </button>
                             <a href="{{ route('projects.test-cases.index', $project) }}" 
@@ -144,7 +144,7 @@
                             </svg>
                             <p class="text-gray-500 mt-4 mb-4">No test cases found. Create your first test case!</p>
                             <a href="{{ route('projects.test-cases.create', $project) }}" 
-                               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                               class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
                                 + Create Test Case
                             </a>
                         </div>

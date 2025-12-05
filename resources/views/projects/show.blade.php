@@ -10,7 +10,7 @@
             <div class="flex gap-3">
                 @if($project->created_by === auth()->id())
                     <a href="{{ route('projects.edit', $project) }}" 
-                       class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                       class="bg-gray-500 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded">
                         Edit Project
                     </a>
                 @endif
@@ -63,19 +63,19 @@
                     <h3 class="text-lg font-semibold mb-4">Quick Actions</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <a href="{{ route('projects.test-cases.create', $project) }}" 
-                           class="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-bold py-3 px-4 rounded-lg text-center transition">
+                           class="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black font-bold py-3 px-4 rounded-lg text-center transition">
                             + New Test Case
                         </a>
                         <a href="{{ route('projects.test-runs.create', $project) }}" 
-                           class="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-bold py-3 px-4 rounded-lg text-center transition">
+                           class="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-black font-bold py-3 px-4 rounded-lg text-center transition">
                             + New Test Run
                         </a>
                         <a href="{{ route('projects.defects.create', $project) }}" 
-                           class="border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold py-3 px-4 rounded-lg text-center transition">
+                           class="border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-black font-bold py-3 px-4 rounded-lg text-center transition">
                             + Report Defect
                         </a>
                         <a href="{{ route('projects.reports.index', $project) }}" 
-                           class="border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white font-bold py-3 px-4 rounded-lg text-center transition">
+                           class="border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-black font-bold py-3 px-4 rounded-lg text-center transition">
                             View Reports
                         </a>
                     </div>
