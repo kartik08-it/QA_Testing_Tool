@@ -10,12 +10,12 @@
             <div class="flex gap-3">
                 @if($testRun->status !== 'completed')
                     <a href="{{ route('projects.test-runs.execute', [$project, $testRun]) }}" 
-                       class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                       class="bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 rounded">
                         Execute Tests
                     </a>
                 @endif
                 <a href="{{ route('projects.test-runs.index', $project) }}" 
-                   class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                   class="bg-gray-500 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded">
                     Back to List
                 </a>
             </div>
