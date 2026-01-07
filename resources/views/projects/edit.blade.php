@@ -80,7 +80,7 @@
                         <div class="flex justify-between items-center">
                             <button type="button" 
                                     onclick="if(confirm('Are you sure you want to delete this project? This action cannot be undone.')) document.getElementById('delete-form').submit();"
-                                    class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-6 rounded-lg transition">
+                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition">
                                 Delete Project
                             </button>
                             
@@ -90,7 +90,7 @@
                                     Cancel
                                 </a>
                                 <button type="submit" 
-                                        class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-6 rounded-lg transition">
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition">
                                     Update Project
                                 </button>
                             </div>

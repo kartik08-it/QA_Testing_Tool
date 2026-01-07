@@ -5,7 +5,7 @@
                 Test Runs - {{ $project->name }}
             </h2>
             <a href="{{ route('projects.test-runs.create', $project) }}" 
-               class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
+               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 + Create Test Run
             </a>
         </div>
@@ -91,12 +91,12 @@
                                         <div class="flex gap-2">
                                             @if($run->status === 'planned' || $run->status === 'in_progress')
                                                 <a href="{{ route('projects.test-runs.execute', [$project, $run]) }}" 
-                                                   class="bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 rounded text-sm">
+                                                   class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded text-sm">
                                                     Execute
                                                 </a>
                                             @endif
                                             <a href="{{ route('projects.test-runs.show', [$project, $run]) }}" 
-                                               class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded text-sm">
+                                               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm">
                                                 View Details
                                             </a>
                                         </div>
@@ -115,7 +115,7 @@
                             </svg>
                             <p class="text-gray-500 mt-4 mb-4">No test runs yet. Create your first test run!</p>
                             <a href="{{ route('projects.test-runs.create', $project) }}" 
-                               class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
+                               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                 + Create Test Run
                             </a>
                         </div>

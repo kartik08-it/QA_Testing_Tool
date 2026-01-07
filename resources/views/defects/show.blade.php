@@ -8,7 +8,7 @@
                 <p class="text-sm text-gray-600 mt-1">{{ $project->name }}</p>
             </div>
             <a href="{{ route('projects.defects.index', $project) }}" 
-               class="bg-gray-500 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded">
+               class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
                 Back to List
             </a>
         </div>
@@ -33,7 +33,7 @@
                                 <option value="closed" {{ $defect->status === 'closed' ? 'selected' : '' }}>Closed</option>
                                 <option value="reopened" {{ $defect->status === 'reopened' ? 'selected' : '' }}>Reopened</option>
                             </select>
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-6 rounded-lg">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg">
                                 Update Status
                             </button>
                         </form>

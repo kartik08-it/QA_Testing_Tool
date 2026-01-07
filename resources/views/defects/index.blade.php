@@ -5,7 +5,7 @@
                 Defects - {{ $project->name }}
             </h2>
             <a href="{{ route('projects.defects.create', $project) }}" 
-               class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded">
+               class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                 + Report Defect
             </a>
         </div>
@@ -40,7 +40,7 @@
                         </div>
                         
                         <div class="flex gap-2">
-                            <button type="submit" class="bg-gray-500 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded flex-1">
+                            <button type="submit" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded flex-1">
                                 Filter
                             </button>
                             <a href="{{ route('projects.defects.index', $project) }}" 
