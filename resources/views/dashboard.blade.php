@@ -1,3 +1,5 @@
+
+{{-- resources/views/dashboard.blade.php --}}
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -74,11 +76,18 @@
                         
                         @if($defectsBySeverity->count() > 0)
                             <div class="space-y-3">
-                                @foreach(['critical' => 'red', 'high' => 'orange', 'medium' => 'yellow', 'low' => 'blue'] as $severity => $color)
+                                @foreach(['critical', 'high', 'medium', 'low'] as $severity)
                                     @php
                                         $count = $defectsBySeverity[$severity] ?? 0;
                                         $total = $defectsBySeverity->sum();
                                         $percentage = $total > 0 ? ($count / $total) * 100 : 0;
+                                        
+                                        $colorClasses = [
+                                            'critical' => 'bg-red-500',
+                                            'high' => 'bg-orange-500',
+                                            'medium' => 'bg-yellow-500',
+                                            'low' => 'bg-blue-500'
+                                        ];
                                     @endphp
                                     <div>
                                         <div class="flex justify-between mb-1">
@@ -86,7 +95,7 @@
                                             <span class="text-sm text-gray-600">{{ $count }}</span>
                                         </div>
                                         <div class="w-full bg-gray-200 rounded-full h-2">
-                                            <div class="bg-{{ $color }}-500 h-2 rounded-full" style="width: {{ $percentage }}%"></div>
+                                            <div class="{{ $colorClasses[$severity] }} h-2 rounded-full" style="width: {{ $percentage }}%"></div>
                                         </div>
                                     </div>
                                 @endforeach
