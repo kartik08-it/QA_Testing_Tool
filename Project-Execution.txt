@@ -1,0 +1,146 @@
+DOCKERIZED LARAVEL PROJECT – RUN GUIDE
+=================================
+
+This project is fully Dockerized.
+You do NOT need to install PHP, MySQL, Composer, or Node on your local system.
+
+Everything runs inside Docker containers.
+
+--------------------------------------------------
+PREREQUISITES
+--------------------------------------------------
+1. Docker
+2. Docker Compose v2
+
+Verify installation:
+docker --version
+docker compose version
+
+--------------------------------------------------
+PROJECT SETUP (FIRST TIME ONLY)
+--------------------------------------------------
+
+1. Clone the repository
+
+git clone <your-repository-url>
+cd QA_Testing_Tool
+
+--------------------------------------------------
+2. Environment setup
+
+Create .env file if not present:
+
+cp .env.example .env
+
+Update database configuration in .env:
+
+APP_URL=http://localhost:8000
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+
+IMPORTANT:
+DB_HOST must be 'mysql' (Docker service name).
+
+--------------------------------------------------
+RUN THE PROJECT (DEMO MODE)
+--------------------------------------------------
+
+3. Build and start Docker containers
+
+docker compose up -d --build
+
+--------------------------------------------------
+4. Install backend dependencies (Laravel)
+
+docker compose exec app composer install
+
+--------------------------------------------------
+5. Generate application key
+
+docker compose exec app php artisan key:generate
+
+--------------------------------------------------
+6. Run database migrations
+
+docker compose exec app php artisan migrate
+
+--------------------------------------------------
+7. Install frontend dependencies
+
+docker compose exec app npm install
+
+--------------------------------------------------
+8. Start Vite (CSS & JS)
+
+docker compose exec app npm run dev
+
+Keep this command running for hot reload.
+
+--------------------------------------------------
+9. Start Laravel server (open a new terminal)
+
+docker compose exec app php artisan serve --host=0.0.0.0 --port=8000
+
+--------------------------------------------------
+VIEW THE DEMO
+--------------------------------------------------
+
+Open browser and visit:
+
+http://localhost:8000
+
+--------------------------------------------------
+STOP THE PROJECT
+--------------------------------------------------
+
+docker compose down
+
+Database data is preserved.
+
+--------------------------------------------------
+RESET DATABASE (OPTIONAL – DEV ONLY)
+--------------------------------------------------
+
+docker compose down -v
+docker compose up -d --build
+
+WARNING: This deletes all database data.
+
+--------------------------------------------------
+COMMON COMMANDS (REFERENCE)
+--------------------------------------------------
+
+Start containers:
+docker compose up -d
+
+Stop containers:
+docker compose down
+
+Laravel artisan:
+docker compose exec app php artisan <command>
+
+Composer:
+docker compose exec app composer <command>
+
+NPM:
+docker compose exec app npm <command>
+
+MySQL shell:
+docker compose exec mysql mysql -u admin -p
+
+--------------------------------------------------
+SUMMARY
+--------------------------------------------------
+
+- Laravel 11
+- PHP 8.2 (Docker)
+- MySQL 8.2 (Docker)
+- Vite frontend
+- Zero host dependencies
+
+Clone → Docker up → View demo.
