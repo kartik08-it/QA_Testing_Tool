@@ -4,6 +4,8 @@ echo "===================================="
 echo "Starting Laravel application (Render)"
 echo "===================================="
 
+mkdir -p storage/logs bootstrap/cache
+
 # Fail-safe: ensure storage permissions
 echo "Fixing permissions..."
 chown -R www-data:www-data storage bootstrap/cache || true
