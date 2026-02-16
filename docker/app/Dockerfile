@@ -35,6 +35,10 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' \
     && sed -i 's/80/${PORT}/g' /etc/apache2/ports.conf \
     && sed -i 's/:80/:${PORT}/g' /etc/apache2/sites-enabled/000-default.conf
 
+# Copy startup script
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
 EXPOSE 10000
 
-CMD ["apache2-foreground"]
+CMD ["/start.sh"]
